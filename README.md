@@ -28,7 +28,7 @@ flutter run
 
 ### ✌&ensp;Preview
 
-|               Page1 Preview             |             page2 Preview           |          page2 Preview           |
+|               Page1 Preview             |             page2 Preview           |          page3 Preview           |
 | :----------------------------------: | :----------------------------------: | :----------------------------------: |
 |  <img src="page1.png" width="350"> | <img src="page2.png" width="350">|<img src="page3.png" width="350">|
 

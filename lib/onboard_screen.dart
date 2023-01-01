@@ -38,7 +38,7 @@ class _OnBaordScreenState extends State<OnBaordScreen> {
 
   void _onPressed(int index) {
     setState(() {
-      _currentIndex = index + 1;
+      _currentIndex = index;
     });
   }
 
@@ -66,12 +66,8 @@ class _OnBaordScreenState extends State<OnBaordScreen> {
               // ),
               Expanded(
                 child: PageView(
-                  // controller: controller,
-                  onPageChanged: (index) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
+                  controller: controller,
+                  onPageChanged: _onPressed,
                   children: [
                     SliderContainer(
                       image: sampleData[0].getImageAssetPath(),
@@ -128,7 +124,11 @@ class _OnBaordScreenState extends State<OnBaordScreen> {
                           ),
                           TextButton(
                               onPressed: () {
-                                _onPressed(_currentIndex);
+                                controller.animateToPage(
+                                  _currentIndex + 1,
+                                  duration: const Duration(milliseconds: 400),
+                                  curve: Curves.easeInOut,
+                                );
                                 print("button click");
                               },
                               child: Text("Next"))
